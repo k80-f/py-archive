@@ -1,0 +1,19 @@
+<doctype html>
+<head>
+    <title>arChive</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<h2>Edit Title</h2>
+ 
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+    <dl>
+        {{ render_field(form.title) }}
+        {{ render_field(form.subject_matter) }}
+        {{ render_field(form.publisher) }}
+        {{ render_field(form.media_type) }}
+		{{ render_field(form.name)}}
+    </dl>
+    <p><input type=submit value=Submit>
+</form>
+
