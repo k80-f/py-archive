@@ -1,30 +1,26 @@
-<doctype html>
-<head>
-  <title>arChive</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
+{% extends "base_layout.html" %}
+{% block content %}
+    <h2>arChive</h2>
 
-<h2>arChive</h2>
+    <a href="{{ url_for('.new_title') }}"> New Title </a>
 
-<a href="{{ url_for('.new_title') }}"> New Title </a>
-
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
     <ul class=flashes>
-    {% for message in messages %}
-      <li>{{ message }}</li>
-    {% endfor %}
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
     </ul>
-  {% endif %}
-{% endwith %}
- 
-{% from "_formhelpers.html" import render_field %}
-<form method=post>
-  <dl>
-    {{ render_field(form.select) }}
-    <p>
-    {{ render_field(form.search) }}
-  </dl>
-  <p><input type=submit value=Search>
-</form>
+    {% endif %}
+    {% endwith %}
 
+    {% from "_formhelpers.html" import render_field %}
+    <form method=post>
+        <dl>
+            {{ render_field(form.select) }}
+            <p>
+            {{ render_field(form.search) }}
+        </dl>
+        <p><input type=submit value=Search>
+    </form>
+{% endblock %}
