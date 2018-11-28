@@ -4,7 +4,6 @@ from app import app
 from db_setup import init_db, db_session
 from forms import MediaSearchForm, TitleForm
 from flask import flash, render_template, request, redirect
-from tables import Results
 from db_creator import Title, Owner
 
 init_db()
@@ -48,9 +47,7 @@ def search_results(search):
         return redirect('/')
     else:
         # display results
-        table = Results(results)
-        table.border = True
-        return render_template('results.html', table=table)
+        return render_template('results.html', results=results)
  
  
 @app.route('/new_title', methods=['GET', 'POST'])

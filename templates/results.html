@@ -1,9 +1,31 @@
-<doctype html>
-<head>
-<title>Search Results - arChive</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
+{% extends "base_layout.html" %}
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Subject Matter</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Media Type</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.title }}</td>
+                    <td>{{ result.subject_matter }}</td>
+                    <td>{{ result.publisher }}</td>
+                    <td>{{ result.media_type }}</td>
+                    <td>{{ result.owner }}</td>
+                    <td><a href="/item/{{ result.id }}">Edit</a></td>
+                    <td><a href="/delete/{{ result.id }}">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-{{ table }}
-
-<a href="{{ url_for('.index') }}"> Back </a> 
+    <a href="{{ url_for('.index') }}"> Back </a>
+{% endblock %}
