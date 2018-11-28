@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, backref
  
-engine = create_engine('sqlite:///library.db', echo=True)
+engine = create_engine('sqlite:///data/library.db', echo=True)
 Base = declarative_base()
  
  
