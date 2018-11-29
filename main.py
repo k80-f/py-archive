@@ -59,7 +59,7 @@ def new_title():
         title = Title()
         save_changes(title, form, new=True)
         flash('Title added, thanks a heap!')
-        return redirect('/')
+        return redirect('/?success')
      
     return render_template('new_title.html', form=form)
  
