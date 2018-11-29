@@ -8,7 +8,9 @@ class MediaSearchForm(Form):
     search = StringField('')
     
 class TitleForm(Form):
-    media_types = ['Physical Copy', 'PDF', 'Other']
+    media_types = [('Physical Copy', 'Physical Copy'),
+                   ('PDF', 'PDF'),
+                   ('Other', 'Other')]
     title = StringField('Title')
     subject_matter = StringField('Subject Matter')
     publisher = StringField('Publisher')
