@@ -1,25 +1,29 @@
 body {
-  background-color: #5AC074;
-  text-align: center;
-  font-family: "arvo"; }
+    background-color: #5AC074;
+    text-align: center;
+    font-family: "arvo";
+    margin: 0;
+    overflow: hidden;
+}
 
-  li.list-group-item {
+li.list-group-item {
     background: transparent;
     border: none;
-    color: white; }
+    color: white;
+}
 
-    body {
-      margin: 0;
-      overflow: hidden; }
+[class|="confetti"] {
+    position: absolute;
+}
 
-      [class|="confetti"] {
-        position: absolute; }
+.red {
+    background-color: #E94A3F;
+}
 
-        .red {
-          background-color: #E94A3F; }
+.yellow {
+    background-color: #FAA040;
+}
 
-          .yellow {
-            background-color: #FAA040; }
-
-            .blue {
-              background-color: #5FC9F5; }
+.blue {
+    background-color: #5FC9F5;
+}
