@@ -8,13 +8,12 @@
             {{ render_field(form.title) }}
             {{ render_field(form.subject_matter) }}
             {{ render_field(form.publisher) }}
-            {{ render_field(form.media_type) }}
             {{ render_field(form.file_url) }}
             {{ render_field(form.name) }}
+            {{ render_field(form.media_type) }}
         </dl>
         <p>
             <button class="btn btn-outline-light" type=submit>Delete</button>
-            <br><br>
             <a class="btn btn-outline-light" href="{{ url_for('.index') }}"> Back </a>
         </p>
     </form>
