@@ -1,0 +1,46 @@
+body {
+    background-color: #5AC074;
+    text-align: center;
+    font-family: "arvo";
+}
+
+li.list-group-item {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+// .wrapper {
+//     position: relative;
+//     min-height: 100vh;
+// }
+
+// .wrapper {
+//     position: absolute;
+//     min-height: 100vh;
+//     min-width: 100vw;
+//     left: 0px;
+//     top: 0px;
+//     z-index: 999;
+// }
+
+[class|="confetti"] {
+    position: absolute;
+}
+
+.red {
+    background-color: #E94A3F;
+}
+
+.yellow {
+    background-color: #FAA040;
+}
+
+.blue {
+    background-color: #5FC9F5;
+}
