@@ -2,19 +2,43 @@
 {% block content %}
     <h2><img src="/static/delete.png" width="400px"></h2>
     
-    {% from "_formhelpers.html" import render_field %}
+    <table class="table table-responsive-sm">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Subject Matter</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Media Type</th>
+                <th scope="col">Owner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ form.title.data }}</td>
+                <td>{{ form.subject_matter.data }}</td>
+                <td>{{ form.publisher.data }}</td>
+                <td>
+                    {% if form.file_url.data != '' %}
+                        <a class="btn btn-outline-secondary" href="{{ form.file_url.data }}">
+                    {% endif %}
+                    {{ form.media_type.data }}
+                    {% if form.file_url.data != '' %}
+                        </a>
+                    {% endif %}
+                </td>
+                <td>{{ form.owner.data }}</td>
+            </tr>
+        </tbody>
+    </table>
     <form method=post>
-        <dl>
-            {{ render_field(form.title) }}
-            {{ render_field(form.subject_matter) }}
-            {{ render_field(form.publisher) }}
-            {{ render_field(form.file_url) }}
-            {{ render_field(form.name) }}
-            {{ render_field(form.media_type) }}
-        </dl>
-        <p>
-            <button class="btn btn-outline-light" type=submit>Delete</button>
-            <a class="btn btn-outline-light" href="{{ url_for('.index') }}"> Back </a>
-        </p>
+    {{ form.csrf }}
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="btn btn-outline-light btn-secondary btn-block" href="{{ url_for('.index') }}">Back</a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button class="btn btn-outline-light btn-primary btn-block" type=submit>Delete</button>
+            </div>
+        </div>
     </form>
 {% endblock %}
