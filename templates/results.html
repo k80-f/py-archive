@@ -19,11 +19,11 @@
                     <td>{{ result.subject_matter }}</td>
                     <td>{{ result.publisher }}</td>
                     <td>
-                        {% if result.media_type == "PDF" %}
-                            <a href="//www.google.com">
+                        {% if result.file_url != '' %}
+                            <a href="{{ result.file_url }}">
                         {% endif %}
                         {{ result.media_type }}
-                        {% if result.media_type == "PDF" %}
+                        {% if result.file_url != '' %}
                             </a>
                         {% endif %}
                     </td>
