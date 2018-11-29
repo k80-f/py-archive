@@ -18,7 +18,15 @@
                     <td>{{ result.title }}</td>
                     <td>{{ result.subject_matter }}</td>
                     <td>{{ result.publisher }}</td>
-                    <td>{{ result.media_type }}</td>
+                    <td>
+                        {% if result.media_type == "PDF" %}
+                            <a href="//www.google.com">
+                        {% endif %}
+                        {{ result.media_type }}
+                        {% if result.media_type == "PDF" %}
+                            </a>
+                        {% endif %}
+                    </td>
                     <td>{{ result.owner }}</td>
                     <td><a class="btn btn-outline-light" href="/item/{{ result.id }}">Edit</a></td>
                     <td><a class="btn btn-outline-light" href="/delete/{{ result.id }}">Delete</a></td>
