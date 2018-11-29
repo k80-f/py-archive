@@ -18,16 +18,25 @@
 
     {% from "_formhelpers.html" import render_field %}
     <form method=post>
-        <dl>
-            <p>
-                {{ render_field(form.select) }}
-            </p>
-            <p>
-                {{ render_field(form.search) }}
-            </p>
-        </dl>
-        <p>
-            <button class="btn btn-outline-light" type=submit>Search</button>
-        </p>
+        {{ form.csrf }}
+        <div class="form-row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <select class="form-control" id="select" name="select">
+                        {% for option in form.select.choices %}
+                            <option>{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="Keyword(s)">
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-outline-light btn-block" type=submit>Search</button>
+            </div>
+        </div>
     </form>
 {% endblock %}
