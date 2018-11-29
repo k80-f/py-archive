@@ -1,8 +1,11 @@
 {% extends "base_layout.html" %}
 {% block content %}
-    <h2>arChive</h2>
-
-    <a href="{{ url_for('.new_title') }}"> New Title </a>
+    <h2><img src="static/logotransp.png" width="300px"></h2>
+    
+    <button type="button" class="btn btn-outline-light">
+        <a href="{{ url_for('.new_title') }}"> New Title </a>
+    </button>
+    <br><br>
 
     {% with messages = get_flashed_messages() %}
     {% if messages %}

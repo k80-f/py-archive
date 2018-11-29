@@ -6,7 +6,7 @@ class MediaSearchForm(Form):
     choices = [('Title', 'Title'),
                ('Media', 'Media'),
                ('Subject', 'Subject')]
-    select = SelectField('Search for media:', choices=choices)
+    select = SelectField('Search for titles:', choices=choices)
     search = StringField('')
     
 class TitleForm(Form):
