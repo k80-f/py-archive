@@ -1,6 +1,6 @@
 {% extends "base_layout.html" %}
 {% block content %}
-    <table class="table table-responsive-sm">
+    <table class="table table-responsive-sm table-striped table-hover">
         <thead>
             <tr>
                 <th scope="col">Title</th>
@@ -20,7 +20,7 @@
                     <td>{{ result.publisher }}</td>
                     <td>
                         {% if result.file_url != '' %}
-                            <a class="btn btn-outline-secondary" href="{{ result.file_url }}">
+                            <a class="btn btn-outline-light" href="{{ result.file_url }}">
                         {% endif %}
                         {{ result.media_type }}
                         {% if result.file_url != '' %}

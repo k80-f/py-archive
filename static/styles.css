@@ -2,8 +2,7 @@ body {
     background-color: #5AC074;
     text-align: center;
     font-family: "arvo";
-    margin: 0;
-    overflow: hidden;
+    margin: 0px 0px 15px 0px;
 }
 
 li.list-group-item {
@@ -26,4 +25,22 @@ li.list-group-item {
 
 .blue {
     background-color: #5FC9F5;
+}
+
+.table {
+    border: 1px solid white;
+}
+
+form {
+    color: white;
+}
+
+.form-control::-webkit-input-placeholder { color: #999; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #999; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: #999; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #999; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: #999; }  /* Microsoft Edge */
+
+.btn {
+    min-width: 100px;
 }

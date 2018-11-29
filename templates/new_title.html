@@ -18,8 +18,13 @@
                     <label for="publisher">Publisher</label>
                     <input type="text" class="form-control" id="publisher" name="publisher" value="{{ form.publisher.data }}" placeholder="ABC Co.">
                 </div>
+                
                 <div class="form-group">
-                    <label for="file_url">File URL (if applicable)</label>
+                    {% if form.file_url.errors %}
+                        <label for="file_url" class="alert alert-danger">{{ form.file_url.errors[0] }}</label>
+                    {% else %}
+                        <label for="file_url">File URL (if applicable)</label>
+                    {% endif %}
                     <input type="text" class="form-control" id="file_url" name="file_url" value="{{ form.file_url.data }}" placeholder="https://www.example.com/">
                 </div>
                 <div class="form-group">
