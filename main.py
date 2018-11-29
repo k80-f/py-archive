@@ -72,6 +72,7 @@ def save_changes(title, form, new=False):
     title.subject_matter = form.subject_matter.data
     title.publisher = form.publisher.data
     title.media_type = form.media_type.data
+    title.file_url = form.file_url.data
     title.owner = owner
      
     if new:

@@ -17,4 +17,5 @@ class TitleForm(Form):
     subject_matter = StringField('Subject Matter')
     publisher = StringField('Publisher')
     media_type = SelectField('Media', choices=media_types)
+    file_url = StringField('File Url (optional)')
     name = StringField('Owner Name')

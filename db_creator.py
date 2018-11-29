@@ -28,6 +28,7 @@ class Title(Base):
     subject_matter = Column(String)
     publisher = Column(String)
     media_type = Column(String)
+    file_url = Column(String)
  
     owner_id = Column(Integer, ForeignKey("owners.id"))
     owner = relationship("Owner", backref=backref(

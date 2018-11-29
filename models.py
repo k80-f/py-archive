@@ -21,6 +21,7 @@ class Title(db.Model):
     subject_matter = db.Column(db.String)
     publisher = db.Column(db.String)
     media_type = db.Column(db.String)
+    file_url = db.Column(db.String)
  
     owner_id = db.Column(db.Integer, db.ForeignKey("owners.id"))
     owner = db.relationship("Owner", backref=db.backref(
