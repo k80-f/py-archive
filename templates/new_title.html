@@ -2,19 +2,47 @@
 {% block content %}
     <h2><img src="static/newtitle.png" width="300px"></h2>
     
-    {% from "_formhelpers.html" import render_field %}
     <form method=post>
-        <dl>
-            {{ render_field(form.title) }}
-            {{ render_field(form.subject_matter) }}
-            {{ render_field(form.publisher) }}
-            {{ render_field(form.file_url) }}
-            {{ render_field(form.name) }}
-            {{ render_field(form.media_type) }}
-        </dl>
-        <p>
-            <button class="btn btn-outline-light" type=submit>Submit</button>
-            <a class="btn btn-outline-light" href="{{ url_for('.index') }}"> Back </a>
-        </p>
+        {{ form.csrf }}
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ form.title.data }}" placeholder="Beginners Guide To Finance">
+                </div>
+                <div class="form-group">
+                    <label for="subject_matter">Subject Matter</label>
+                    <input type="text" class="form-control" id="subject_matter" name="subject_matter" value="{{ form.subject_matter.data }}" placeholder="Educational">
+                </div>
+                <div class="form-group">
+                    <label for="publisher">Publisher</label>
+                    <input type="text" class="form-control" id="publisher" name="publisher" value="{{ form.publisher.data }}" placeholder="ABC Co.">
+                </div>
+                <div class="form-group">
+                    <label for="file_url">File URL (if applicable)</label>
+                    <input type="text" class="form-control" id="file_url" name="file_url" value="{{ form.file_url.data }}" placeholder="https://www.example.com/">
+                </div>
+                <div class="form-group">
+                    <label for="owner">Owner</label>
+                    <input type="text" class="form-control" id="owner" name="owner" value="{{ form.owner.data }}" placeholder="Rob F.">
+                </div>
+                <div class="form-group">
+                    <label for="media_type">Media Type</label>
+                    <select class="form-control" id="media_type" name="media_type" value="{{ form.media_type.data }}">
+                        {% for option in form.media_type.choices %}
+                            <option {% if form.media_type.data == option[0] %}selected{% endif %}>{{ option[0] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3">
+                <a class="btn btn-outline-light btn-secondary btn-block" href="{{ url_for('.index') }}">Back</a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button class="btn btn-outline-light btn-primary btn-block" type=submit>Submit</button>
+            </div>
+        </div>
     </form>
 {% endblock %}
