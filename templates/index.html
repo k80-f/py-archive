@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <select class="form-control" id="select" name="select">
                         {% for option in form.select.choices %}
-                            <option>{{ option }}</option>
+                            <option>{{ option[0] }}</option>
                         {% endfor %}
                     </select>
                 </div>

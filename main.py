@@ -66,7 +66,7 @@ def new_title():
 def save_changes(title, form, new=False):
     # Get data from form and assign it to correct attributes
     owner = Owner()
-    owner.name = form.name.data
+    owner.name = form.owner.data
      
     title.title = form.title.data
     title.subject_matter = form.subject_matter.data
