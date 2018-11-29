@@ -20,13 +20,12 @@
                     <td>{{ result.publisher }}</td>
                     <td>{{ result.media_type }}</td>
                     <td>{{ result.owner }}</td>
-                    <td><a href="/item/{{ result.id }}">Edit</a></td>
-                    <td><a href="/delete/{{ result.id }}">Delete</a></td>
+                    <td><a class="btn btn-outline-light" href="/item/{{ result.id }}">Edit</a></td>
+                    <td><a class="btn btn-outline-light" href="/delete/{{ result.id }}">Delete</a></td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-    <button type="button" class="btn btn-outline-light">
-        <a href="{{ url_for('.index') }}"> Back </a>
+        <a class="btn btn-outline-light" href="{{ url_for('.index') }}"> Back </a>
     </button>
 {% endblock %}
