@@ -18,4 +18,4 @@ You can run arChive in a docker container by building and then running a docker 
    * Replace `[SECRET_KEY]` with a secret key.
    * Replace `[PORT]` with the desired port.
    * (Optional) Add `-d` to run detached.
-   * Example: `docker run -d -e "FLASK_SECRET_KEY=mysecretkey" -p 8080:8080 py-archive`
+   * Example: `docker run -d -e "FLASK_SECRET_KEY=mysecretkey" -p 8080:8080 py-archive` will run py-archive detached on port 8080 with secret key "mysecretkey".
